@@ -1,0 +1,47 @@
+.navbar-brand>img {
+    display: block;
+    position: relative;
+    left: -536% !important;
+    top: -31px !important;
+}
+
+.nav.navbar-nav.navbar-right {
+    margin-right: 0;
+    position: relative;
+    top: 0 !important;
+}
+
+.promoter-search {
+    display: inline-block;
+    width: 81%;
+    margin-left: 10%;
+    background-color: #ffffff;
+    color: rgba(190, 164, 46, 1)
+}
+
+span.follow-count {
+    display: block;
+    font-size: .6em;
+
+}
+
+h2.promoter-profile {
+    font-size: 1em;
+  }
+
+  .circle {
+      border-radius: 50%;
+      overflow: hidden;
+  }
+
+hr.aboutus {
+    border: 1px solid #cccccc;
+    position: relative;
+    top: 230px;
+}
+
+hr.productsandservices {
+    border: 1px solid #cccccc;
+    position: relative;
+    top: 2px;
+}

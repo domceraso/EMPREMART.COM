@@ -10,10 +10,14 @@ import { AlertComponent } from './_directives';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
+import { ModalComponent } from './_directives';
+import { ModalService } from './_services';
+import { FooterComponent } from './_directives/footer.component';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DropdownDirective } from './_directives/dropdown.directive';
 
 @NgModule({
     imports: [
@@ -27,14 +31,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         AppComponent,
         AlertComponent,
         HomeComponent,
+        ModalComponent,
+        FooterComponent,
         LoginComponent,
         RegisterComponent,
-        DashboardComponent
+        DashboardComponent,
+        DropdownDirective
     ],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
+        ModalService,
         UserService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }

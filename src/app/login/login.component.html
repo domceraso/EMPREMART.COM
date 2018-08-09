@@ -1,4 +1,74 @@
-﻿<h2>Login</h2>
+﻿<!-- Preloader starts-->
+<div id="preloader"></div>
+<!-- Preloader ends -->
+
+
+<!-- Navigation area starts -->
+<div class="menu-area navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+
+<!-- Navigation starts -->
+<div class="col-md-12">
+  <div class="mainmenu">
+      <div class="navbar navbar-nobg">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="">
+                  <img src="assets/img/logo.png" alt=""> 
+              </a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          </div>
+
+          <div class="navbar-collapse collapse">
+              <nav>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="active"><a class="smooth_scroll" href="/">HOME</a></li>
+                      <li><a class="smooth_scroll" href="/">HOW IT WORKS</a></li>
+                      <li><a class="smooth_scroll" href="/">BECOME A PROMOTER</a></li>
+                      <li><a class="smooth_scroll" href="#">BUY ON EMPREMART</a></li>
+                      <li class="nav-item dropdown" categoryDropdown>
+                          <a class="dropdown-toggle" href="#" role="button">CATEGORIES</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Category 1</a></li>
+                                  <li><a href="#">Category 2</a></li>
+                                  <li><a href="#">Category 3</a></li>
+                              </ul>
+                      </li>
+                      <li><button (click)="openModal('registerModal')" class="btn hidden-xs red-bg">SIGN UP</button></li> 
+                  </ul>
+              </nav>
+          </div>
+      </div>
+      <div class="search-container">
+          <form action="" autocomplete="off" class="form-horizontal" method="post" accept-charset="utf-8">
+              <div class="input-group">
+                  <input name="searchtext" value="Search..." class="form-control-search" type="text">
+                  <span class="input-group-btn">
+                     <input type="button" class="btn btn-default btn-search" type="submit" value="GO" id="addressSearch">
+                  </span>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+<!-- Navigation ends -->
+
+
+        </div>
+    </div>
+</div>
+<!-- Navigation area ends -->
+
+<section id="login">
+<div class="container">
+        <div class="row">
+<div class="col-md-12">
+<h2>Login</h2>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="username">Username</label>
@@ -20,3 +90,7 @@
         <a [routerLink]="['/register']" class="btn btn-link">Register</a>
     </div>
 </form>
+</div>
+</div>
+</div>
+</section>

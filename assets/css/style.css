@@ -1,14 +1,3 @@
-/* ----------------------------------------------------------------------------------------
-* Author        : Dominic J. Ceraso - Mean Monkey Studios
-* Template Name : EMPREMART.COM - MEAN Stack application
-* File          : EMPREMART main stylesheet
-* Version       : 0.1
-* ---------------------------------------------------------------------------------------- */
-
-
-
-
-
 
 /* INDEX
 ----------------------------------------------------------------------------------------
@@ -43,7 +32,203 @@
 
 -------------------------------------------------------------------------------------- */
 
+/*
+MODAL POPUP
+*/
 
+modal {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1100;
+    overflow: auto;
+}
+
+.modal-body {
+    padding: 20px;
+    background: #fff;
+    margin: 40px;
+    position: relative;
+    width: 65%;
+    left: 15%;
+    top: 120px;
+    border: 21px solid #555;
+    border-radius: 50px 20px;
+}
+
+.modal-background {
+    /* modal background fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 1040;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.registerRadio {
+    margin-bottom: 24px;
+}
+
+.registerRadio div {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    background: #FAFAFA;
+    border: 1px solid #DDD;
+    -webkit-transition: background .2s ease-in-out;
+    transition: background .2s ease-in-out; 
+}
+
+.registerRadio div .who1 {
+    font-size: 22px;
+}
+
+.registerRadio div .mP {
+    font-size: 36px;
+    margin-top: 6px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.socLogin-header {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    margin: 0;
+    padding-bottom: 6px;
+}
+
+@media (min-width: 900px) {
+    .socLogin-header {
+        float: left;
+        line-height: 30px;
+        padding-bottom: 0;
+    }
+
+    .socLogin-btnContainer {
+        float: right;
+    }
+}
+
+.socLogin-btn {
+    border: 0;
+    display: inline-block;
+    font-size: 14px!important;
+    margin: 0 2px;
+    opacity: .8;
+    padding: 8px 0;
+    width: 32px;
+}
+
+.socLogin-btn, .socLogin-btnContainer, .socLogin-header {
+    text-align: center;
+}
+
+.socLogin-btn_fb {
+    background: #3b5998;
+    color: #FFF;
+}
+
+.socLogin-btn_ig {
+    background: #f09433;
+    color: #FFF;
+}
+
+.socLogin-btn_google {
+    background: #dd4b39;
+    color: #FFF;
+    margin-right: 0;
+}
+
+form.registerForm {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: rgba(190, 164, 46, 1);
+    padding: 10px 10px;
+}
+
+.form-control-register {
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 2px 15px;
+}
+
+#promoter .selected {
+    background-color: rgba(123, 212, 204, 1);
+    color: #fff;
+}
+
+#buyer .selected {
+    background-color: rgba(123, 212, 204, 1);
+    color: #fff;
+}
+
+
+
+/*
+END MODAL POPUP
+*/
+
+
+/*SEARCH BAR HOME */
+
+.form-control-search {
+    display: block;
+    width: 69%;
+    height: 34px;
+    padding: 2px 15px;
+    color: #000;
+    border: 1px solid #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 0px;
+    box-shadow: none;
+    border-radius: 5px 0px 0px 5px;
+    float: right;
+    position: relative;
+    top: -47px;
+    left: -160px;
+}
+
+.btn-search {
+    height: 34px;
+    position: relative;
+    top: -40px;
+    border: 1px solid #555 !important;
+    background-color: rgba(190, 164, 46, 1);
+    left: -160px;
+    top: -47px;
+}
+
+.btn-search:hover {
+    background-color: rgba(190, 164, 46, .7) !important;
+    color: rgba(255, 255, 255, 1) !important;
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500,600');
@@ -143,9 +328,9 @@ fieldset {
 }
  
 .btn:hover, input[type="submit"]:hover {
-    color: #b050ff;
+    color: rgba(123, 212, 204, 1);
     background: #fff;
-    border: 1px solid #b050ff;
+    border: 1px solid rgba(123, 212, 204, 1);
 }
 
 .btn-white {
@@ -209,14 +394,14 @@ fieldset {
     text-transform: uppercase;
 }
 
-.section-title p {
-}
-
 .section-title.white h2,
 .section-title.white p {
     color: #fff;
 }
 
+img {
+   
+}
 
 
 
@@ -230,7 +415,7 @@ fieldset {
     width: 100%;
     height: 100%;
     overflow: visible;
-    background-image: url(../img/preloader.gif);
+    background-image: url(../../../assets/img/preloader.gif);
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #fff;
@@ -276,21 +461,38 @@ img {
 }
 
 .red-bg {
-    box-shadow: 0px 10px 15px 0px rgba(255, 101, 165, 0.3); 
-    background: rgb(255,101,165);
-    background: -moz-linear-gradient(45deg,  rgba(255,101,165,1) 0%, rgba(255,101,165,1) 13%, rgba(255,107,154,1) 35%, rgba(255,134,106,1) 100%);
-    background: -webkit-linear-gradient(45deg,  rgba(255,101,165,1) 0%,rgba(255,101,165,1) 13%,rgba(255,107,154,1) 35%,rgba(255,134,106,1) 100%);
-    background: linear-gradient(45deg,  rgba(255,101,165,1) 0%,rgba(255,101,165,1) 13%,rgba(255,107,154,1) 35%,rgba(255,134,106,1) 100%);
+    box-shadow: 0px 10px 15px 0px rgba(123, 212, 204, 1); 
+    background: rgba(190, 164, 46, 1);
+    background: -moz-linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
+    background: -webkit-linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
+    background: linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff65a5', endColorstr='#ff866a',GradientType=1 );
+}
+
+.red-bg:hover {
+    color: rgba(190, 164, 46, 1)!important;
+    border: 1px solid rgba(190, 164, 46, 1) !important;
 }
 
 .gradient-bg {
     box-shadow: 0px 10px 15px 0px rgba(130, 137, 255, 0.3);
-    background: rgb(129,138,255);
-    background: -moz-linear-gradient(45deg,  rgba(129,138,255,1) 0%, rgba(129,138,255,1) 7%, rgba(139,132,255,1) 17%, rgba(180,107,255,1) 42%, rgba(201,99,249,1) 56%, rgba(217,99,236,1) 68%, rgba(241,105,208,1) 83%, rgba(254,113,188,1) 95%, rgba(255,116,182,1) 100%);
-    background: -webkit-linear-gradient(45deg,  rgba(129,138,255,1) 0%,rgba(129,138,255,1) 7%,rgba(139,132,255,1) 17%,rgba(180,107,255,1) 42%,rgba(201,99,249,1) 56%,rgba(217,99,236,1) 68%,rgba(241,105,208,1) 83%,rgba(254,113,188,1) 95%,rgba(255,116,182,1) 100%);
-    background: linear-gradient(45deg,  rgba(129,138,255,1) 0%,rgba(129,138,255,1) 7%,rgba(139,132,255,1) 17%,rgba(180,107,255,1) 42%,rgba(201,99,249,1) 56%,rgba(217,99,236,1) 68%,rgba(241,105,208,1) 83%,rgba(254,113,188,1) 95%,rgba(255,116,182,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#818aff', endColorstr='#ff74b6',GradientType=1 );
+    background: rgb(123, 212, 204);
+    background: -moz-linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    background: -webkit-linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    background: linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff74b6', endColorstr='#818aff',GradientType=1 );
+}
+
+.red-bg-alt {
+    background: #fff;
+    border: 1px solid #bea42e;
+    color: #bea42e
+}
+
+.red-bg-alt:hover {
+    background-color: rgba(190, 164, 46, 1);
+    transition: .4s all;
+    color: #fff;
 }
 
 
@@ -299,16 +501,16 @@ img {
 *                               02. Navigation area css
 * --------------------------------------------------------------------------------------- */
 .menu-area {
-    height: 75px;
+    height: 125px;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
 }
 
 .menu-area.sticky-menu {
-    background: rgb(255,116,182);
-    background: -moz-linear-gradient(45deg,  rgba(255,116,182,1) 0%, rgba(254,113,188,1) 5%, rgba(241,105,208,1) 17%, rgba(217,99,236,1) 32%, rgba(201,99,249,1) 44%, rgba(180,107,255,1) 58%, rgba(139,132,255,1) 83%, rgba(129,138,255,1) 93%, rgba(129,138,255,1) 100%);
-    background: -webkit-linear-gradient(45deg,  rgba(255,116,182,1) 0%,rgba(254,113,188,1) 5%,rgba(241,105,208,1) 17%,rgba(217,99,236,1) 32%,rgba(201,99,249,1) 44%,rgba(180,107,255,1) 58%,rgba(139,132,255,1) 83%,rgba(129,138,255,1) 93%,rgba(129,138,255,1) 100%);
-    background: linear-gradient(45deg,  rgba(255,116,182,1) 0%,rgba(254,113,188,1) 5%,rgba(241,105,208,1) 17%,rgba(217,99,236,1) 32%,rgba(201,99,249,1) 44%,rgba(180,107,255,1) 58%,rgba(139,132,255,1) 83%,rgba(129,138,255,1) 93%,rgba(129,138,255,1) 100%);
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff74b6', endColorstr='#818aff',GradientType=1 );
 
 }
@@ -332,6 +534,7 @@ img {
     margin-right: 0;
     position: relative;
     top: -50px;
+    left: 10px;
 }
 
 .navbar-brand {
@@ -356,8 +559,12 @@ img {
     display: inline-block;
 }
 
+.navbar-nav li:hover {
+    text-decoration: underline;
+}
+
 .navbar-nav li a {
-    color: #fff;
+    color: #000000;
     font-size: 14px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
@@ -390,16 +597,13 @@ img {
 
 
 
-
-
-
 /* ----------------------------------------------------------------------------------------
 *                               03. Slider area css
 * -------------------------------------------------------------------------------------- */
 
 .slider-area {
     min-height: 400px;
-    background-image: url("../img/bg/slider-bg.png");
+    background-image: url('../../../assets/img/bg/slider-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -414,7 +618,8 @@ img {
 @media (min-width: 992px) {
     .slider-area {
         height: 100%;
-        height: 800px;
+        height: 1030px;
+        border-bottom: 1px solid #7bd4cc;
     }
 }
 
@@ -423,7 +628,13 @@ img {
     color: #fff;
 }
 
-.intro-text h1 {
+.intro-video-text {
+    color: #000;
+    margin-top: 50px;
+}
+
+.intro-text h1,
+.intro-video-text h1 {
     color: inherit;
     font-size: 36px;
     font-weight: 600;
@@ -453,7 +664,7 @@ img {
 @media (min-width: 992px) {
     .intro-text-box {
         display: table;
-        transform: translate(0%, 50%);
+        padding-top: 40px;
     }
 }
 
@@ -468,6 +679,7 @@ img {
 
 .intro-img {
     text-align: center;
+    position: relative;
 }
 
 @media (max-width: 991px) {
@@ -521,7 +733,7 @@ img {
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: top right;
-    background-image: url(../img/bg/hero-box-bg.png);
+    background-image: url('../../../assets/img/bg/hero-box-bg.png');
     box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
 }
 
@@ -552,7 +764,7 @@ img {
 * --------------------------------------------------------------------------------------- */
 .feature-area {
     background-color: #f9f9ff;
-    background-image: url("../img/bg/feature-bg.png");
+    background-image: url('../../../assets/img/bg/feature-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -596,14 +808,25 @@ img {
     margin-top: 60px;
 }
 
+
+.navbar-brand>img {
+    display: block;
+    position: relative;
+    left: -1190% !important;
+    top: 19px !important;
+    height: 85px;
+    width: auto;
+        
+}
+
 @media (max-width: 767px) {
-    .feture-img {
-        margin-bottom: 30px;
-        margin-top: 0px;
+    .nav.navbar-nav.navbar-right[_ngcontent-c0] {
+        top: 0px;
     }
-    .feture-img img {
-        width: 100%;
+    .navbar-brand>img {
+        left: 0%;
     }
+
 }
 
 
@@ -615,7 +838,16 @@ img {
 *                                   05. Video area css
 * --------------------------------------------------------------------------------------- */
 .video-area {
-    background-image: url("../img/bg/video-bg.png");
+    background-image: url('../../../assets/img/bg/video-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.video-area-shop  {
+    background-image: url('../../../assets/img/bg/video-bg1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -650,7 +882,8 @@ img {
     width: 100px;
     height: 100px;
     line-height: 100px;
-    border-radius: 500px;
+    border-radius: 50%;
+
 }
 
 
@@ -756,7 +989,7 @@ img {
 .action-area {
     color: #fff;
     position: relative;
-    background-image: url("../img/bg/cta-bg.png");
+    background-image: url('../../../assets/img/bg/cta-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -802,7 +1035,7 @@ img {
 /*----------------------------------------*/
 
 .screenshot-area {    
-    background-image: url("../img/bg/screen-bg.png");
+    background-image: url('../../../assets/img/bg/screen-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -958,8 +1191,8 @@ img {
 /* ----------------------------------------------------------------------------------------
 *                                10. Subscribe area css
 * --------------------------------------------------------------------------------------- */
-.subscribe-area {
-    background-image: url("../img/bg/subscribe-bg.png");
+.subscribe-area { 
+    background-image: url('../../../assets/img/bg/subscribe-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -1074,7 +1307,7 @@ img {
 
 .form-control:focus {
     outline: 0;
-    border-color: rgb(255,101,165);
+    border-color: rgba(190, 164, 46, 1);
     box-shadow: none;
 }
 
@@ -1121,16 +1354,12 @@ img {
 
 
 
-
-
-
-
 /* ----------------------------------------------------------------------------------------
 *                                   13. Footer area css
 * --------------------------------------------------------------------------------------- */
 .footer-widget-area {
     color: #777;
-    background-image: url("../img/bg/footer-bg.png");
+    background-image: url("../../../assets/img/bg/footer-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -1151,7 +1380,7 @@ footer a {
 }
 
 footer a:hover {
-    color: rgb(255,101,165);
+    color: rgba(190, 164, 46, 1);
 }
 
 @media (min-width: 768px) {
@@ -1193,7 +1422,7 @@ footer a:hover {
 
 .footer-widget i.fa,
 .footer-widget span.lnr {
-    color: rgb(255,101,165);
+    color: rgba(190, 164, 46, 1);
 }
 
 .footer-widget ul {

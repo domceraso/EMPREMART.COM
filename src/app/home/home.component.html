@@ -8,40 +8,6 @@
       <div class="container">
           <div class="row">
 
-              <!-- Navigation starts 
-              <div class="col-md-12">
-                  <div class="mainmenu">
-                      <div class="navbar navbar-nobg">
-                          <div class="navbar-header">
-                              <a class="navbar-brand" href="">
-                                  <img src="assets/img/logo.png" alt=""> 
-                                <h1 class="logo">EMPREMART</h1>
-                              </a>
-                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                  <span class="sr-only">Toggle navigation</span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                              </button>
-                          </div>
-
-                          <div class="navbar-collapse collapse">
-                              <nav>
-                                  <ul class="nav navbar-nav navbar-right">
-                                      <li class="active"><a class="smooth_scroll" href="#slider">HOME</a></li>
-                                      <li><a class="smooth_scroll" href="#feature">HOW IT WORKS</a></li>
-                                      <li><a class="smooth_scroll" href="#pricing">PRICING</a></li>
-                                      <li><a class="smooth_scroll" href="#testimonial">TESTIMONIAL</a></li>
-                                      <li><a class="smooth_scroll" href="#contact">CONTACT</a></li>
-                                      <li><a class="btn hidden-xs red-bg" href="/register">SIGN UP</a></li>
-                                  </ul>
-                              </nav>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              Navigation ends -->
-
 <!-- Navigation starts -->
 <div class="col-md-12">
     <div class="mainmenu">
@@ -62,14 +28,31 @@
                 <nav>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a class="smooth_scroll" href="#slider">HOME</a></li>
-                        <li><a class="smooth_scroll" href="#feature">HOW IT WORKS</a></li>
-                        <li><a class="smooth_scroll" href="#pricing">PRICING</a></li>
-                        <li><a class="smooth_scroll" href="#testimonial">TESTIMONIAL</a></li>
-                        <li><a class="smooth_scroll" href="#contact">CONTACT</a></li>
-                        <li><a class="btn hidden-xs red-bg" href="/register">SIGN UP</a></li>
+                        <li><a class="smooth_scroll" href="#howitworks">HOW IT WORKS</a></li>
+                        <li><a class="smooth_scroll" href="#">BECOME A PROMOTER</a></li>
+                        <li><a class="smooth_scroll" href="#">BUY ON EMPREMART</a></li>
+                        <li class="nav-item dropdown" categoryDropdown>
+                            <a class="dropdown-toggle" href="#" role="button">CATEGORIES</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Category 1</a></li>
+                                    <li><a href="#">Category 2</a></li>
+                                    <li><a href="#">Category 3</a></li>
+                                </ul>
+                        </li>
+                        <li><button (click)="openModal('registerModal')" class="btn hidden-xs red-bg">SIGN UP</button></li> 
                     </ul>
                 </nav>
             </div>
+        </div>
+        <div class="search-container">
+            <form action="" autocomplete="off" class="form-horizontal" method="post" accept-charset="utf-8">
+                <div class="input-group">
+                    <input name="searchtext" value="Search..." class="form-control-search" type="text">
+                    <span class="input-group-btn">
+                       <input type="button" class="btn btn-default btn-search" type="submit" value="GO" id="addressSearch">
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -81,6 +64,95 @@
   </div>
   <!-- Navigation area ends -->
 
+ <!-- Registration Modal Begins -->
+  <modal id="registerModal">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>Create your account</h1>
+            <p>Select how you will use Empremart</p>
+            <form [formGroup]="registerForm" class="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                            <div class="registerRadio clearfix">
+                                    <div (click)="selectUser(0);" id="promoter">
+                                        <p class="who1">I want to</p>
+                                        <p class="mP">Sell</p>
+                                    </div>
+                                    <div (click)="selectUser(1);" id="buyer" >
+                                        <p class="who1">I want to</p>
+                                        <p class="mP">Buy</p>
+                                    </div>
+                                </div>
+                        </div>
+          <!--       <div class="form-group">
+                        <form [formGroup]="registerForm" class="registerForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <ul>
+                                        <li class="registerRadio clearfix" *ngFor="let role of roles" (click)="select(role)" [ngClass]="{active: isActive(role)}">
+                                            <a>{{role}}</a>
+                                        </li>
+                                    </ul>        
+                                </div> -->
+                            <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control-register" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control-register" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control-register" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" formControlName="email" class="form-control-register" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required and needs to be valid.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control-register" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary red-bg">Register</button>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <a [routerLink]="['/login']" class="btn btn-link red-bg-alt">Already have an Account?</a>
+                </div>
+            </form>
+            <div class="clearfix socLogin" id="socLogin">
+                    <p class="socLogin-header">Join with your social networks</p>
+                    <div class="socLogin-btnContainer">
+                        <a role="button" onclick="" class="socLogin-btn socLogin-btn_fb" title="Sign up with Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a role="button" onclick="" class="socLogin-btn socLogin-btn_ig" title="Sign up with Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a role="button" onclick="" class="socLogin-btn socLogin-btn_google" title="Sign up with Google+">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+            <button (click)="closeModal('registerModal');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
 
 
   <!-- Slider area starts -->
@@ -95,17 +167,17 @@
               <div class="item active">
                   <div class="table">
                       <div class="table-cell">
-                          <div class="intro-text">
+                          <div class="intro-video-text">
                               <div class="container">
                                   <div class="row">
 
                                       <!-- intro image -->
-                                      <div class="col-md-6 col-sm-12 intro-img">
-                                          <img src="../../../assets/img/slider/1.png" alt="">
+                                      <div class="col-md-12 col-sm-12 intro-img">
+                                        <iframe width="100%" height="515px" src="https://www.youtube.com/embed/h-KHWUq3B7I?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                       </div>
 
                                       <!-- intro text -->
-                                      <div class="col-md-6 col-sm-12">
+                                      <div class="col-md-12 col-sm-12">
                                           <div class="intro-text-box clearfix">
                                               <h1>What Can I Sell? <br> Let us help you!</h1>
                                               <p>Serenity has taken posse ssion of mine entire soul posse ssion of my entire soul which I enjoy with my whole heart. Serenity has taken posse ssion of mine has taken possession of mine entire soul possession entire soul heart.</p>
@@ -120,7 +192,7 @@
                   </div>
               </div>
 
-              <!-- Item 2 -->
+              <!-- Item 2 
               <div class="item">
                   <div class="table">
                       <div class="table-cell">
@@ -128,12 +200,12 @@
                               <div class="container">
                                   <div class="row">
 
-                                      <!-- intro image -->
+                                      <!-- intro image 
                                       <div class="col-md-6 col-md-push-6 col-sm-12 intro-img">
                                           <img src="../../../assets/img/slider/2.png" alt="">
                                       </div>
 
-                                      <!-- intro text -->
+                                      <!-- intro text =
                                       <div class="col-md-6 col-md-pull-6 col-sm-12">
                                           <div class="intro-text-box clearfix">
                                               <h1>Need Assistance? <br> Have us call you!</h1>
@@ -148,17 +220,19 @@
                       </div>
                   </div>
               </div>
+              -->
+              <hr>
 
           </div>
           <!-- End Wrapper for slides-->
 
 
-          <!-- Carousel Pagination -->
+          <!-- Carousel Pagination 
           <ol class="carousel-indicators">
               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           </ol>
-
+-->
 
           <!-- Slider left right button -->
           <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -179,7 +253,7 @@
 
 
   <!-- Hero boxes starts -->
-  <section class="hero-box-area section-big">
+  <section class="hero-box-area section-big" id="howitworks">
       <div class="container">
 
           <div class="row">
@@ -224,6 +298,63 @@
       </div>
   </section>
   <!-- Hero boxes ends -->
+
+  <!-- screenshot area starts -->
+  <section id="screenshot" class="screenshot-area section-big">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="section-title white">
+                    <h2>Promoter's Stories</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- screenshots starts -->
+            <div class="screenshots">
+                <div class="screen">
+                    <a href="assets/img/screenshots/1.png" class="screen-popup"><img src="assets/img/screenshots/1.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/2.png" class="screen-popup"><img src="assets/img/screenshots/2.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/3.png" class="screen-popup"><img src="assets/img/screenshots/3.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/4.png" class="screen-popup"><img src="assets/img/screenshots/4.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/5.png" class="screen-popup"><img src="assets/img/screenshots/5.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/6.png" class="screen-popup"><img src="assets/img/screenshots/6.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/7.png" class="screen-popup"><img src="assets/img/screenshots/7.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/8.png" class="screen-popup"><img src="assets/img/screenshots/8.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/9.png" class="screen-popup"><img src="assets/img/screenshots/9.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/10.png" class="screen-popup"><img src="assets/img/screenshots/10.png" alt=""></a>
+                </div>
+                <div class="screen">
+                    <a href="assets/img/screenshots/11.png" class="screen-popup"><img src="assets/img/screenshots/11.png" alt=""></a>
+                </div>
+            </div>
+            <!-- screenshots ends -->
+
+        </div>
+    </div>
+</section>
+<!-- screenshot area ends -->
 
 
 
@@ -289,8 +420,9 @@
           <div class="row">
               <div class="col-md-12">
                   <div class="section-title white text-center">
-                      <h2>Discover New Possibilities</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                      <h2>Promote Your Business Now!</h2>
+                      <p>Millions of shoppers cant wait to see what YOU have in store!</p>
+                      <button class="btn green-bg">Begin Now</button>
                   </div>
               </div>
           </div>
@@ -305,7 +437,7 @@
 
 
 
-  <!-- Price area starts -->
+  <!-- Price area starts 
   <section id="pricing" class="pricing-area section-big">
       <div class="container">
 
@@ -320,8 +452,6 @@
                   </div>
               </div>
 
-
-              <!-- Pricing Table -->
               <div class="col-md-3 col-sm-4 col-xs-12">
                   <div class="price-item featured" data-connectors="1">
                       <div class="info">
@@ -342,7 +472,6 @@
                   </div>
               </div>
 
-              <!-- Pricing Table -->
               <div class="col-md-3 col-sm-4 col-xs-12">
                   <div class="price-item" data-connectors="1">
                       <div class="info">
@@ -367,66 +496,7 @@
 
       </div>
   </section>
-  <!-- Price area ends -->
-
-
-
-  <!-- screenshot area starts -->
-  <section id="screenshot" class="screenshot-area section-big">
-      <div class="container">
-
-          <div class="row">
-              <div class="col-md-12 text-center">
-                  <div class="section-title white">
-                      <h2>Promoter's Stories</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <!-- screenshots starts -->
-              <div class="screenshots">
-                  <div class="screen">
-                      <a href="assets/img/screenshots/1.png" class="screen-popup"><img src="assets/img/screenshots/1.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/2.png" class="screen-popup"><img src="assets/img/screenshots/2.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/3.png" class="screen-popup"><img src="assets/img/screenshots/3.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/4.png" class="screen-popup"><img src="assets/img/screenshots/4.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/5.png" class="screen-popup"><img src="assets/img/screenshots/5.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/6.png" class="screen-popup"><img src="assets/img/screenshots/6.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/7.png" class="screen-popup"><img src="assets/img/screenshots/7.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/8.png" class="screen-popup"><img src="assets/img/screenshots/8.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/9.png" class="screen-popup"><img src="assets/img/screenshots/9.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/10.png" class="screen-popup"><img src="assets/img/screenshots/10.png" alt=""></a>
-                  </div>
-                  <div class="screen">
-                      <a href="assets/img/screenshots/11.png" class="screen-popup"><img src="assets/img/screenshots/11.png" alt=""></a>
-                  </div>
-              </div>
-              <!-- screenshots ends -->
-
-          </div>
-      </div>
-  </section>
-  <!-- screenshot area ends -->
+    Price area ends -->
 
 
 
@@ -437,7 +507,7 @@
           <div class="row">
               <div class="col-md-12 text-center">
                   <div class="section-title">
-                      <h2>What Customers Say About Us</h2>                        
+                      <h2>Text area goes here..</h2>                        
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
               </div>
@@ -447,76 +517,6 @@
 
               <div class="col-md-12">
                   <div class="testimonial-list">
-
-                      <!-- Testimonial item -->
-                      <div class="single-testimonial">
-
-                          <img src="assets/img/testi/1.jpg" alt="">
-
-                          <div class="test-right">
-                              <h4>Mr. Jonathon Doe</h4>
-                              <div class="clearfix ratings">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                              <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
-                          </div>
-
-                      </div><!-- Testimonial item -->
-                      <div class="single-testimonial">
-
-                          <img src="assets/img/testi/1.jpg" alt="">
-
-                          <div class="test-right">
-                              <h4>Mr. Jonathon Doe</h4>
-                              <div class="clearfix ratings">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                              <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
-                          </div>
-
-                      </div><!-- Testimonial item -->
-                      <div class="single-testimonial">
-
-                          <img src="assets/img/testi/1.jpg" alt="">
-
-                          <div class="test-right">
-                              <h4>Mr. Jonathon Doe</h4>
-                              <div class="clearfix ratings">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                              <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
-                          </div>
-
-                      </div><!-- Testimonial item -->
-                      <div class="single-testimonial">
-
-                          <img src="assets/img/testi/1.jpg" alt="">
-
-                          <div class="test-right">
-                              <h4>Mr. Jonathon Doe</h4>
-                              <div class="clearfix ratings">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                              <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
-                          </div>
-
-                      </div>
 
                   </div>
               </div>
@@ -597,7 +597,7 @@
 
 
 
-  <!-- Action starts -->
+  <!-- Action starts 
   <section id="action" class="action-area section-big">
       <div class="container">
           <div class="row">
@@ -619,7 +619,25 @@
           </div>
       </div>
   </section>
-  <!-- Action area ends -->
+Action area ends -->
+
+
+<!-- video area starts -->
+<div id="video" class="video-area-shop section-big">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title white text-center">
+                    <h2>Support Entrepreneurs - Shop Now!</h2>
+                    <p>Ways to save!, Begin shopping now!</p>
+                    <button class="btn red-bg">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- video area ends -->
 
 
 
@@ -654,122 +672,3 @@
       </div>
   </section>
   <!-- Subscribe area ends -->
-
-
-
-  <!-- Footer area starts -->
-  <footer>
-
-      <div class="footer-widget-area section-big">
-          <div class="container">
-              <div class="row">
-
-                  <!-- Footer Widget -->
-                  <div class="col-md-3">
-                      <div class="footer-widget">
-                          <h3>About Embremart</h3>
-                          <p>lorem ipsum dolor sit amet. no matter what ever you write you can write here because  you can write here because it is dummy text you can write here because it is dummy text. Client will change this text after purchasing this item. So its not important what you are writing here.</p>
-                      </div>
-                  </div>
-
-                  <!-- Footer Widget -->
-                  <div class="col-md-3">
-                      <div class="footer-widget">
-                          <h3>Quick Links</h3>
-                          <ul>
-                              <li><a href="#">Education Center</a></li>
-                              <li><a href="#">Privacy Policy</a></li>
-                              <li><a href="#">Terms & Conditions</a></li>
-                              <li><a href="#">Monthly Deals</a></li>
-                              <li><a href="#">About Us</a></li>
-                              <li><a href="#">Contact Us</a></li>
-                          </ul>
-                      </div>
-                  </div>
-
-                  <!-- Footer Widget -->
-                  <div class="col-md-3">
-                      <div class="footer-widget">
-                          <h3>Our Information</h3>
-                          <div class="address">
-                              <div class="address-box clearfix">
-                                  <span class="lnr lnr-home"></span>
-                                  <p>123 Anywhere St. <br> Denver CO. 12345</p>
-                              </div>
-                              <div class="address-box clearfix">
-                                  <span class="lnr lnr-phone-handset"></span>
-                                  <p><a href="tel:015110022">1(888)123-5678</a>
-                                  <br>
-                                  <a href="tel:015110022">1(123)456-7890</a></p>
-                              </div>
-                              <div class="address-box clearfix">
-                                  <span class="lnr lnr-envelope"></span>
-                                  <p><a href="mailto:email@yourdomain.com">info@embremart.com</a>
-                              </div>
-                              <div class="address-box clearfix">
-                                  <span class="lnr lnr-earth"></span>
-                                  <p><a href="http://www.yourdomain.com">www.embremart.com</a></p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <!-- Footer Widget -->
-                  <div class="col-md-3">
-                      <div class="footer-widget">
-                          <h3>Contact Us</h3>
-                              <!-- Contact form starts -->
-                          <div class="contact-form">
-
-                              <form id="ajax-contact" action="assets/mailer.php" method="post">
-                                  <div class="form-group in_name">
-                                      <input type="text" name="name" class="form-control" id="name" placeholder="Name" required="required">
-                                  </div>
-                                  <div class="form-group in_email">
-                                      <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
-                                  </div>
-                                  <div class="form-group in_message">
-                                      <textarea rows="5" name="message" class="form-control" id="message" placeholder="Message" required="required"></textarea>
-                                  </div>
-                                  <div class="actions clearfix">
-                                      <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn red-bg" title="Submit Your Message!">
-                                  </div>
-                              </form>
-
-                              <!-- Submition status -->
-                              <div id="form-messages"></div>
-
-                          </div>
-                          <!-- Contact form ends-->
-                      </div>
-                  </div>
-
-              </div>
-          </div>            
-      </div>
-
-      <div class="clearfix"></div>
-
-      <!-- Footer Bottom area -->
-      <div class="footer-bottom-area">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-6 col-sm-6">
-                      <p>&copy; 2018 Copyright <a href="">EmbreMart.com | All Rights Reserved.</a></p>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                      <ul class="social-links">
-                          <li>Social</li>
-                          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                          <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-  </footer>
-  <!-- Footer area ends -->

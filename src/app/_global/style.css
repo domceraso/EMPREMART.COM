@@ -1,0 +1,1530 @@
+
+/* INDEX
+----------------------------------------------------------------------------------------
+
+01. General css
+
+02. Navigation area css
+
+03. Slider area css
+
+04. Hero area css
+
+05. Price area css
+
+06. Action area css
+
+07. Service area css
+
+08. Pricing area css
+
+09. Testimonial area css
+
+10. Why Choose area css
+
+11. Subscribe area css
+
+12. Client area css
+
+13. Contact area css
+
+14. Footer area css
+
+-------------------------------------------------------------------------------------- */
+
+/*
+MODAL POPUP
+*/
+
+modal {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1100;
+    overflow: auto;
+}
+
+.modal-body {
+    padding: 20px;
+    background: #fff;
+    margin: 40px;
+    position: relative;
+    width: 65%;
+    left: 15%;
+    top: 120px;
+    border: 21px solid #555;
+    border-radius: 50px 20px;
+}
+
+.modal-background {
+    /* modal background fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 1040;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.registerRadio {
+    margin-bottom: 24px;
+}
+
+.registerRadio div {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    background: #FAFAFA;
+    border: 1px solid #DDD;
+    -webkit-transition: background .2s ease-in-out;
+    transition: background .2s ease-in-out; 
+}
+
+.registerRadio div .who1 {
+    font-size: 22px;
+}
+
+.registerRadio div .mP {
+    font-size: 36px;
+    margin-top: 6px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.socLogin-header {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    margin: 0;
+    padding-bottom: 6px;
+}
+
+@media (min-width: 900px) {
+    .socLogin-header {
+        float: left;
+        line-height: 30px;
+        padding-bottom: 0;
+    }
+
+    .socLogin-btnContainer {
+        float: right;
+    }
+}
+
+.socLogin-btn {
+    border: 0;
+    display: inline-block;
+    font-size: 14px!important;
+    margin: 0 2px;
+    opacity: .8;
+    padding: 8px 0;
+    width: 32px;
+}
+
+.socLogin-btn, .socLogin-btnContainer, .socLogin-header {
+    text-align: center;
+}
+
+.socLogin-btn_fb {
+    background: #3b5998;
+    color: #FFF;
+}
+
+.socLogin-btn_ig {
+    background: #f09433;
+    color: #FFF;
+}
+
+.socLogin-btn_google {
+    background: #dd4b39;
+    color: #FFF;
+    margin-right: 0;
+}
+
+form.registerForm {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: rgba(190, 164, 46, 1);
+    padding: 10px 10px;
+}
+
+.form-control-register {
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 2px 15px;
+}
+
+#promoter .selected {
+    background-color: rgba(123, 212, 204, 1);
+    color: #fff;
+}
+
+#buyer .selected {
+    background-color: rgba(123, 212, 204, 1);
+    color: #fff;
+}
+
+
+
+/*
+END MODAL POPUP
+*/
+
+
+/*SEARCH BAR HOME */
+
+.form-control-search {
+    display: block;
+    width: 69%;
+    height: 34px;
+    padding: 2px 15px;
+    color: #000;
+    border: 1px solid #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 0px;
+    box-shadow: none;
+    border-radius: 5px 0px 0px 5px;
+    float: right;
+    position: relative;
+    top: 1px;
+    left: -160px;
+}
+
+.btn-search {
+    height: 34px;
+    position: relative;
+    top: -40px;
+    border: 1px solid #555 !important;
+    background-color: rgba(190, 164, 46, 1);
+}
+
+.btn-search:hover {
+    background-color: rgba(190, 164, 46, .7) !important;
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500,600');
+
+
+/* ----------------------------------------------------------------------------------------
+*                                       01. General css
+* -------------------------------------------------------------------------------------- */
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    color: #777;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    letter-spacing: 0px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: 0 none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
+
+.btn, input[type='submit'] {
+    color: #fff;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 5px;
+    letter-spacing: 0px;
+    display: inline-block;
+    transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -webkit-transition: 0.3s ease-out;
+    border: 1px solid transparent;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+}
+ 
+.btn:hover, input[type="submit"]:hover {
+    color: rgba(123, 212, 204, 1);
+    background: #fff;
+    border: 1px solid rgba(123, 212, 204, 1);
+}
+
+.btn-white {
+    color: #b050ff;
+    background: #fff;
+}
+
+.btn-white:hover {
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+.btn-trnsp {
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+.btn-trnsp:hover {
+    border: 1px solid #fff;
+    background: #fff;
+}
+
+.btn-gry {
+    color: #222;
+    background: #f9f9ff;
+    border: 1px solid #ececec;
+}
+
+.btn-gry:hover {
+    color: #b050ff;
+    background: #fff;
+    border: 1px solid #b050ff;
+}
+
+
+.section-big {
+    padding: 140px 0px;
+}
+
+@media (max-width: 767px) {
+    .section-big {
+        padding: 80px 0px;
+    }
+}
+
+.section-small {
+    padding: 50px 0px;
+}
+
+.section-title {
+    margin: auto;
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    margin-top: 0;
+    font-size: 30px;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.section-title.white h2,
+.section-title.white p {
+    color: #fff;
+}
+
+img {
+   
+}
+
+
+
+/* preloader css */
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background-image: url(../../../assets/img/preloader.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.table-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+}
+
+.space {
+    height: 30px;
+}
+
+.space-100 {
+    height: 100px;
+}
+
+
+
+
+/* Gradient Color Background Css */
+
+.green-bg {
+    box-shadow: 0px 10px 15px 0px rgba(102, 204, 150, 0.3);
+    background: rgb(102,204,153);
+    background: -moz-linear-gradient(45deg,  rgba(102,204,153,1) 0%, rgba(108,205,148,1) 19%, rgba(136,209,125,1) 72%, rgba(146,211,117,1) 100%);
+    background: -webkit-linear-gradient(45deg,  rgba(102,204,153,1) 0%,rgba(108,205,148,1) 19%,rgba(136,209,125,1) 72%,rgba(146,211,117,1) 100%);
+    background: linear-gradient(45deg,  rgba(102,204,153,1) 0%,rgba(108,205,148,1) 19%,rgba(136,209,125,1) 72%,rgba(146,211,117,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66cc99', endColorstr='#92d375',GradientType=1 );
+}
+
+.red-bg {
+    box-shadow: 0px 10px 15px 0px rgba(123, 212, 204, 1); 
+    background: rgba(190, 164, 46, 1);
+    background: -moz-linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
+    background: -webkit-linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
+    background: linear-gradient(45deg,  rgba(190, 164, 46, 1) 0%, rgba(190, 164, 46, 1) 13%, rgba(190, 164, 46, 1) 35%, rgba(190, 164, 46, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff65a5', endColorstr='#ff866a',GradientType=1 );
+}
+
+.red-bg:hover {
+    color: rgba(190, 164, 46, 1)!important;
+    border: 1px solid rgba(190, 164, 46, 1) !important;
+}
+
+.gradient-bg {
+    box-shadow: 0px 10px 15px 0px rgba(130, 137, 255, 0.3);
+    background: rgb(123, 212, 204);
+    background: -moz-linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    background: -webkit-linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    background: linear-gradient(45deg,  rgba(123, 212, 204, 1) 0%, rgba(123, 212, 204, 1) 5%, rgba(130, 208, 201, 1) 17%, rgba(104, 240, 228, 1) 32%, rgba(49, 225, 209, 1) 44%, rgba(17, 185, 170, 1) 58%, rgba(6, 143, 131, 1) 83%, rgba(190, 164, 46, 1) 93%, rgba(152, 128, 18, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff74b6', endColorstr='#818aff',GradientType=1 );
+}
+
+.red-bg-alt {
+    background: #fff;
+    border: 1px solid #bea42e;
+    color: #bea42e
+}
+
+.red-bg-alt:hover {
+    background-color: rgba(190, 164, 46, 1);
+    transition: .4s all;
+    color: #fff;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                               02. Navigation area css
+* --------------------------------------------------------------------------------------- */
+.menu-area {
+    height: 125px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+.menu-area.sticky-menu {
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
+    background: -moz-linear-gradient(45deg,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 17%, rgba(123, 212, 204, 1) 32%, rgba(123, 212, 204, 1) 44%, rgba(123, 212, 204, 1) 58%, rgba(123, 212, 204, 1) 83%, rgba(190, 164, 46, 1)  93%, rgba(190, 164, 46, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff74b6', endColorstr='#818aff',GradientType=1 );
+
+}
+
+.sticky-menu {
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+}
+
+.mainmenu {
+    margin-top: 12px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: 0px;
+}
+
+.nav.navbar-nav.navbar-right {
+    margin-right: 0;
+    position: relative;
+    top: -50px;
+}
+
+.navbar-brand {
+    padding: 0;
+    font-size: 36px;
+    display: flex;
+    color: #b050ff;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.navbar-brand span {
+    color: #f45e58;
+}
+
+.navbar-brand:hover {
+    color: #b050ff;
+}
+
+.navbar-nav  li {
+    float: none;
+    display: inline-block;
+}
+
+.navbar-nav  li:hover {
+    text-decoration: underline;
+}
+
+.navbar-nav li a {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-nav a.btn {
+    color: #fff;
+    padding: 10px 25px;
+    margin-left: 20px;
+}
+
+.navbar-nav a.btn:hover {
+    color: rgb(255,101,165);
+    background: #fff;
+    border: 1px solid rgb(255,101,165);
+}
+
+.nav > li > a:hover,
+.nav > li > a:active,
+.nav > li > a:focus {
+    background: none;
+}
+
+.mainmenu .navbar-nav li.active a {}
+
+/* Mobile Nav css */
+.navbar-toggle .icon-bar {
+    background: #fff;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                               03. Slider area css
+* -------------------------------------------------------------------------------------- */
+
+.slider-area {
+    min-height: 400px;
+    background-image: url('../../../assets/img/bg/slider-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.slider-area .carousel,
+.slider-area .carousel-inner,
+.slider-area .item {
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    .slider-area {
+        height: 100%;
+        height: 1030px;
+        border-bottom: 1px solid #7bd4cc;
+    }
+}
+
+.intro-text {
+    text-align: left;
+    color: #fff;
+}
+
+.intro-video-text {
+    color: #000;
+    margin-top: 50px;
+}
+
+.intro-text h1,
+.intro-video-text h1 {
+    color: inherit;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 45px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.intro-text p {
+    color: inherit;
+    margin-bottom: 40px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+
+
+.intro-text .dwnld-btn {
+    margin-top: 20px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@media (min-width: 992px) {
+    .intro-text-box {
+        display: table;
+        padding-top: 40px;
+    }
+}
+
+.dwnld-btn img {
+    width: 150px;
+    height: auto;
+}
+
+.dwnld-btn.appstore img {
+    padding-top: 1px;
+}
+
+.intro-img {
+    text-align: center;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .intro-text {
+        margin: 80px auto;
+        text-align: center;
+    }
+    .intro-img img {
+        margin-bottom: 30px;
+    }
+    .hero-overlay h2 {
+        margin-top: 0px;
+        font-size: 1.5em;
+    }
+}
+
+
+#carousel-example-generic .animated {
+    animation-delay: .5s;
+}
+
+#slider .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    margin: 2px 4px;
+    border-radius: 10px;
+    background-color: #ddd;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    border: none;
+}
+
+#slider .carousel-indicators li.active {
+    width: 30px;
+    background-color: rgb(102,204,153);
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                               04. Hero area css
+* ---------------------------------------------------------------------------------------*/
+.hero-box-area {}
+
+.hero-box {
+    margin-top: 30px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-image: url('../../../assets/img/bg/hero-box-bg.png');
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+}
+
+.hero-box i.fa,
+.hero-box span.lnr {
+    color: #fff;
+    float: left;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.hero-box p {
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   05. Feature area css
+* --------------------------------------------------------------------------------------- */
+.feature-area {
+    background-color: #f9f9ff;
+    background-image: url('../../../assets/img/bg/feature-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.feature-box {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+}
+
+.feature-box i.fa,
+.feature-box span.lnr {
+    color: #fff;
+    float: left;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.feature-box p {
+    margin-bottom: 0;
+}
+
+.feature-content {
+    overflow: hidden;
+}
+
+.feature-content h3 {
+    position: relative;
+    margin-top: 0px;
+}
+
+.feture-img {
+    margin-top: 60px;
+}
+
+
+.navbar-brand>img {
+    display: block;
+    position: relative;
+    left: -914% !important;
+    top: 19px !important;
+        
+}
+
+@media (max-width: 767px) {
+    .nav.navbar-nav.navbar-right[_ngcontent-c0] {
+        top: 0px;
+    }
+    .navbar-brand>img {
+        left: 0%;
+    }
+
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   05. Video area css
+* --------------------------------------------------------------------------------------- */
+.video-area {
+    background-image: url('../../../assets/img/bg/video-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.video-area-shop  {
+    background-image: url('../../../assets/img/bg/video-bg1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.video-area  .section-title {
+    max-width: 700px;
+}
+
+@media (max-width: 767px) {
+    .video-area .section-title {
+        max-width: 600px;
+    }
+}
+
+.video-content {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 45%);
+}
+
+.video-content a.popup-youtube i.fa,
+.video-content a.popup-youtube span.lnr {
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-size: 35px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   05. Price area css
+* --------------------------------------------------------------------------------------- */
+.pricing-area {
+    padding-top: 160px;
+}
+
+.pricing-area .section-title {
+    margin-top: 150px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .pricing-area .section-title {
+        margin-top: 70px;
+    }
+}
+@media (max-width: 767px) {
+    .pricing-area .section-title {
+        margin-top: 0px;
+    }
+}
+
+.pricing-area .section-title p {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1200px) {
+    .pricing-area .section-title {
+        max-width: 480px;
+        margin-left: 0px;
+    }
+}
+
+.price-item {
+    margin-top: 30px;
+    padding: 60px 30px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1);
+}
+
+.price-item ul {
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.price-item h3 {
+    margin-top: 0px;
+}
+
+.price-item p.desc {}
+
+.price span {
+    font-size: 15px;
+    color: #777;
+}
+
+.price-item p.price {
+    margin-top: 35px;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 42px;
+    color: rgb(102,204,153);
+    text-shadow: 0px 5px 20px rgba(102, 204, 153, 0.3);
+}
+
+.price-item.featured .price {
+    color: rgb(255,101,165);
+    text-shadow: 0px 5px 20px rgba(255, 101, 165, 0.3);
+}
+
+.price-item .features {
+    margin: 30px 0;
+}
+
+.price-item .features li {
+    padding: 5px 0;
+}
+
+.price-item a.btn {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   06. Action area css
+* --------------------------------------------------------------------------------------- */
+.action-area {
+    color: #fff;
+    position: relative;
+    background-image: url('../../../assets/img/bg/cta-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+@media (min-width: 1200px) {
+    .action-area .content-box {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .action-area img {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}
+
+.action-area .content-box h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.action-area .content-box p {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.action-area .btn-set .btn {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+/*----------------------------------------*/
+/*     Screenshot Area Css                  
+/*----------------------------------------*/
+
+.screenshot-area {    
+    background-image: url('../../../assets/img/bg/screen-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.screenshots {
+    margin-top: 30px;
+}
+
+.screen {
+    margin: 0 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.screen img {
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                08. Testimonial area css
+* --------------------------------------------------------------------------------------- */
+.testimonial-area .section-title {
+    margin-bottom: 0px;
+}
+
+.testimonial-list {
+    margin-top: 30px;
+}
+
+.single-testimonial {
+    padding: 25px;
+    margin: 50px 20px;
+    margin-bottom: 35px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 30px 0px rgba(153, 153, 153, 0.2);
+}
+
+.ratings i.fa {
+    color: #ffde01;
+}
+
+.ratings {
+    margin-bottom: 20px;
+}
+
+.single-testimonial i.fa {
+    font-size: 15px;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+
+.testimonial-area h3 {
+    margin-top: 0px;
+}
+
+.single-testimonial p {
+    line-height: 25px;
+}
+
+.single-testimonial img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 200px;
+    margin-bottom: 50px;
+}
+
+.single-testimonial .test-right {
+    overflow: hidden;
+}
+
+.owl-theme .owl-controls {
+    height: 20px;
+    margin-top: 30px;
+}
+
+.testimonial-list .owl-controls {
+    margin-top: 0px;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 20px;
+    height: 5px;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);
+    opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    background: #777;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    font-size: 25px;
+    background: none;
+    padding: 5px;
+}
+
+.owl-pagination {
+    text-align: center;
+}
+.owl-pagination .owl-page {
+    display: inline-block;
+}
+.owl-theme .owl-controls .owl-page span {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    margin: 2px 4px;
+    border-radius: 10px;
+    background-color: #ddd;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+}
+.owl-pagination .owl-page.active span {
+    width: 30px;
+    background-color: rgba(190, 164, 46, 1)
+}
+
+
+openssl rsa -in ACCESSPAIR.pem -pubout -outform DER -out rsapubkey.der
+openssl pkcs8 -topk8 -inform PEM -outform PPK -in ACCESSPAIR.pem -out ACCESSPAIR.ppk -nocrypt
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   11. Client area css
+* --------------------------------------------------------------------------------------- */
+.client-area {
+    border-top: 1px solid #eee;
+}
+
+.owl-client .item {
+    margin: 0 7px;
+}
+
+.owl-client .item img {
+    width: auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                10. Subscribe area css
+* --------------------------------------------------------------------------------------- */
+.subscribe-area { 
+    background-image: url('../../../assets/img/bg/subscribe-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.subscribe-box {
+    text-align: center;
+    position: relative;
+}
+
+.subscribe-box h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.subscribe-box p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    margin: auto;
+    margin-top: 50px;
+    max-width: 570px;
+}
+
+.newsletter-form input {
+    float: left;
+    width: 70%;
+    height: 45px;
+    padding: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.newsletter-form input,
+.newsletter-form input:focus {
+    box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+}
+
+.newsletter-form .mc-submit {
+    float: left;
+    height: 45px;
+    width: 29.9%;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    margin-left: -2px;
+}
+
+.newsletter-form .mc-submit:hover {}
+
+.subscribe-area .error {
+    text-align: left;
+}
+
+.mailchimp-alerts {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.mailchimp-success{
+    color: #fff;
+}
+
+.mailchimp-error{
+    color: red;
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   12. Contact area css
+* --------------------------------------------------------------------------------------- */
+
+.contact-form {}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #777;
+}
+
+.address {}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 2px 15px;
+    color: #fff;
+    border: 1px solid #555;
+    background-color: #404040;
+    background-image: none;
+    border-radius: 0px;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    outline: 0;
+    border-color: rgba(190, 164, 46, 1);
+    box-shadow: none;
+}
+
+.contact-form textarea#message {
+    height: 80px;
+    padding-top: 10px;
+}
+
+#submitButton {
+    float: right;
+}
+
+#submitButton:hover {}
+
+.success {
+    color: #fff;
+    padding: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.error {
+    padding: 10px;
+    color: #ff0000;
+    font-weight: 500;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.address span.lnr, 
+.address i.fa {
+    width: 40px;
+    float: left;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------
+*                                   13. Footer area css
+* --------------------------------------------------------------------------------------- */
+.footer-widget-area {
+    color: #777;
+    background-image: url("../../../assets/img/bg/footer-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.footer-bottom-area {
+    color: #777;
+    background: #2a2a2a;
+    padding: 30px 0px;
+}
+
+.footer-bottom-area p {
+    margin: 0px;
+}
+
+footer a {
+    color: #777;
+}
+
+footer a:hover {
+    color: rgba(190, 164, 46, 1);
+}
+
+@media (min-width: 768px) {
+    .social-links{
+        float: right;
+    }
+}
+
+.social-links li {
+    list-style: none;
+    float: left;
+    line-height: 30px;
+}
+
+
+.social-links li a i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .footer-bottom-area {
+        text-align: center;
+    }
+    .footer-bottom-area .social-links {
+        float:none;
+        display:table;
+        margin: auto;
+    }
+}
+
+.footer-widget h2,
+.footer-widget h3 {
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.footer-widget i.fa,
+.footer-widget span.lnr {
+    color: rgba(190, 164, 46, 1);
+}
+
+.footer-widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-widget ul li {
+    margin-bottom: 7px;
+}
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------------
+*                                   Responsive CSS
+* ------------------------------------------------------------------------------- */
+
+
+/* Medium Layout */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  
+}
+/* Medium Layout */
+
+
+
+
+
+/* Tablet Layout */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* Mobile Menu Css Starts */
+    .navbar-nav li a {
+        padding: 15px 5px;
+    }
+    /* Mobile Menu Css Ends */
+
+
+
+}
+/* Tablet Layout */
+
+
+
+
+/* Mobile Layout */
+
+@media only screen and (max-width: 767px) {
+    
+    /* Mobile Menu Css Starts */
+    .navbar-toggle {
+        margin-right: 0px;
+    }
+    .navbar-fixed-bottom .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse {
+        background: #fff;
+        margin-top: 15px;
+        box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.1); 
+    }
+    .navbar {
+        min-height: 0px;
+    }
+    .mainmenu .navbar-nav {
+        margin: 0;
+    }
+    .mainmenu .navbar-nav li {
+        float: none;
+        display: block;
+    }
+    .mainmenu .navbar-nav li a {
+        padding: 11px 15px;
+        color: inherit;
+    }
+    .navbar-fixed-bottom .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 420px;
+    }
+    /* Mobile Menu Css Ends */
+
+
+
+    /* Slider Css Starts */
+    .intro-text {
+        padding: 0 15px;
+    }
+    .intro-text h1 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+    /* Slider Css Ends */
+
+    
+
+
+    
+}
+
+
+/* Small Mobile Layout */
+@media only screen and (max-width: 480px) {
+
+}
+/* Small Mobile Layout 

@@ -25,6 +25,8 @@ var rand,mailOptions,host,link;
  * END SMTP Server details
  */
 
+var refreshTokens = {}
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
